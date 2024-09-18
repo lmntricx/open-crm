@@ -1,0 +1,23 @@
+#addproduct{
+    border:2px solid grey;
+    padding: 6px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: right;
+}
+#addproduct>input{
+    border: 2px solid lightgrey;
+    margin: 4px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #ddd;
+    color: #111;
+}
+.list{
+    border: 1px solid grey;
+    height: 51vh;
+    margin-top: 8px;
+    border-radius: 4px;
+}

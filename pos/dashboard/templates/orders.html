@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gravity CRM| Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dash.css' %}">
+    <link rel="stylesheet" href="{% static 'css/order.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome/css/all.css' %}">
+</head>
+<body>
+
+{% include "menu.html" %}
+
+<div id="rightPanel" class="">
+    <h1 id="headerName">Orders</h1>
+{% include "header.html" %}
+<div id="recentOrders" class="">
+        <h3>Orders</h3>
+        <div id="ordersList" class="list">
+            <div id="orderId" class="listItemHeader listItem">
+                <span>Customer:</span>
+                <span>Order No:</span>
+                <span>Order Date:</span>
+                <span>Status:</span>
+                <span>Qty:</span>
+                <a id="" class="" href="">_____</a>
+                <a id="" class="" href="">_____</a>
+            </div>
+
+            {% for order in orders %}
+            <div id="" class="listItem-Item listItem">
+                <span>Matt Obose</span>
+                <span>#{{ order.OrderId }}</span>
+                <span>{{ order.OrderDate }}</span>
+                <span>{{ order.Status }}</span>
+                <span>{{ order.Qty }}</span>
+                <span id="" class="button">
+                    <a id="" class="" href="">View</a>
+                </span>
+                <span id="" class="button">
+                    <a id="" class="" href="">Delete</a>
+                </span>
+            </div>
+            {% endfor %}
+
+
+            <div id="" class="listItem-Item listItem">
+                <span>Matt Obose</span>
+                <span>#5565</span>
+                <span>27/01/2024</span>
+                <span>Pending</span>
+                <span>10</span>
+                <span id="" class="button">
+                    <a id="" class="" href="">View</a>
+                </span>
+                <span id="" class="button">
+                    <a id="" class="" href="">Delete</a>
+                </span>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

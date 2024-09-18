@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gravity CRM| Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dash.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome/css/all.css' %}">
+</head>
+<body>
+    
+    {% include "menu.html" %}
+
+<div id="rightPanel" class="">
+    <h1 id="headerName">Dashboard</h1>
+    {% include "header.html" %}
+
+    <div id="main-flexbox" class="">
+    <div id="recentOrders" class="">
+        <h3>Recent Orders</h4>
+        <div id="ordersList" class="list">
+            <div id="orderId" class="listItemHeader listItem">
+                <span>Customer:</span>
+                <span>Order No:</span>
+                <span>Order Date:</span>
+                <span>Status:</span>
+                <span>Qty:</span>
+                <a id="" class="" href="">_____</a>
+                <a id="" class="" href="">_____</a>
+            </div>
+
+
+            {% for order in orders %}
+            <div id="" class="listItem-Item listItem">
+                <span>Matt Obose</span>
+                <span>#{{ order.OrderId }}</span>
+                <span>{{ order.OrderDate }}</span>
+                <span>{{ order.Status }}</span>
+                <span>{{ order.Qty }}</span>
+                <span id="" class="button">
+                    <a id="" class="" href="">View</a>
+                </span>
+                <span id="" class="button">
+                    <a id="" class="" href="">Delete</a>
+                </span>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div id="Customers" class="">
+        <h3>Customers</h4>
+        <div id="Customers-list" class="list">
+            <div id="orderId" class="listItemHeader listItem">
+                <span>Customer</span>
+                <span>Phone No:</span>
+                <span>Email:</span>
+                <span>Last Active:</span>
+
+            </div>
+
+            {% for customer in customers %}
+            <div id="" class="listItem-Item listItem">
+                <span>{{ customer.Name}} {{customer.LastName}}</span>
+                <span>{{ customer.Phone}}</span>
+                <span>{{ customer.Email}}</span>
+                <span>{{ customer.CustomerId}}</span>
+            </div>
+            {% endfor %}
+        
+            
+        </div>
+    </div>
+
+    <div id="Customers" class="" hidden>
+        <h3>Customers</h4>
+        <div id="Customers-list" class="list">
+            
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

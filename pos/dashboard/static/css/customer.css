@@ -1,0 +1,44 @@
+form{
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    width: 60%;
+    max-height: 65vh;
+    margin: auto;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+form>h3{
+    text-align: left;
+    padding: 10px;
+    background-color: #222;
+}
+form>div{
+    padding: 20px;
+
+}
+form>div>input,form>div>select{
+    display: block;
+    border: 2px solid #eee;
+    color: #222;
+    background: lightgrey;
+    border-radius: 3px;
+    width: 60%;
+    margin: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 7px;
+
+}
+form>div>input:hover{
+    border: 2px solid grey;
+}
+form>div>select>option{
+    padding:12px;
+    color: #222;
+    background: lightgrey;
+}
+input[type="submit"]:hover{
+    border-color: #fff;
+    background:grey;
+
+}

@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gravity CRM| Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dash.css' %}">
+    <link rel="stylesheet" href="{% static 'css/customer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome/css/all.css' %}">
+</head>
+<body>
+
+{% include "menu.html" %}
+
+<div id="rightPanel" class="">
+    <h1 id="headerName">Create Customer</h1>
+{% include "header.html" %}
+
+<form method="POST"  action="{% url 'newcustomer' %}">
+    {% csrf_token %}
+    <h3>New Customer</h3>
+    <div>
+        <input type="text" placeholder="First Name" id="name" name="name" required>
+        <input type="text" placeholder="Last Name" id="lastName" name="lastName" required>
+        <input type="text" placeholder="Phone No" id="phone" name="phone" required>
+        <input type="text" placeholder="E-mail" id="email" name="email" required>
+
+        <br>
+        <input type="text" placeholder="Street" id="street" name="street" required>
+        <input type="text" placeholder="Town/Unit Name" id="town" name="town" required>
+        <input type="text" placeholder="City/Suburb" id="city" name="city" required>
+        <input type="text" placeholder="Postal Code" id="postalcode" name="postalcode" required>
+
+        <br><br>
+
+        <input type="submit" value="Save">
+    </div>
+</form>
+</div>
+</body>
+</html>

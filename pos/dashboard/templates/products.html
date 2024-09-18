@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gravity CRM| Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dash.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome/css/all.css' %}">
+</head>
+<body>
+
+{% include "menu.html" %}
+
+<div id="rightPanel" class="">
+    <h1 id="headerName">Products</h1>
+    {% include "header.html" %}
+
+    <form id="addproduct" method="POST" class="" action="{% url 'products' %}">
+        {% csrf_token %}
+        <input type="text" placeholder="Name" id="name" name="name" required>
+        <input type="number" placeholder="Price" id="price" name="price" required>
+        <input type="text" placeholder="Distributer" id="distributor" name="distributor" required>
+        <input type="submit" value="Add">
+    </form>
+    <div id="" class="products list">
+        <div id="orderId" class="listItemHeader listItem">
+            <span>Product ID:</span>
+            <span>Name:</span>
+            <span>Price:</span>
+            <span>Date added:</span>
+            <span>Distributor:</span>
+            <a id="" class="" href="">_____</a>
+        </div>
+
+
+        {% for product in products %}
+        <div id="" class="listItem-Item listItem">
+            <span># {{ product.product_id }}</span>
+            <span>{{ product.Name }}</span>
+            <span>R{{ product.Price }}</span>
+            <span>{{ product.DateAdded }}</span>
+            <span>{{ product.Distributor }}</span>
+
+            <span id="" class="button">
+                <a id="" class="" href="{% url 'product_delete' product_id=product.product_id %}">Delete</a>
+            </span>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+</body>
+</html>
